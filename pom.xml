@@ -58,7 +58,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <!-- MANTENER: Esto asegura que el manifiesto del JAR tenga la clase correcta -->
-                    <mainClass>com.example.eureka.EurekaApplication</mainClass>
+                    <mainClass>eureka.server.ServerApplication</mainClass>
                 </configuration>
                 <!-- ELIMINAR <executions> para evitar la doble ejecución del repackage -->
             </plugin>
