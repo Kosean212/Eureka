@@ -12,6 +12,7 @@ ARG JAR_FILE=target/eureka-server.jar
 COPY --from=build /app/${JAR_FILE} app.jar
 EXPOSE 8761
 
-# CORRECCIÓN FINAL: Usamos el comando estándar 'java -jar'
-# El nombre de la clase principal ya fue fijado en el pom.xml.
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# CORRECCIÓN FINAL: Forzamos la clase principal con -cp (Classpath)
+# Esto asegura que Java sepa qué archivo JAR es ejecutable,
+# ignorando cualquier error en el manifiesto interno del JAR.
+ENTRYPOINT ["java", "-cp", "app.jar", "com.example.eureka.EurekaApplication"]
