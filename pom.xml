@@ -50,23 +50,17 @@
     </dependencyManagement>
 
     <build>
-        <!-- AÑADIDO: Define el nombre del JAR como 'eureka-server.jar' -->
+        <!-- CRÍTICO: Define el nombre final del JAR -->
         <finalName>eureka-server</finalName> 
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <!-- ¡ESTO ARREGLA EL CLassNotFoundException EN RENDER! -->
+                    <!-- MANTENER: Esto asegura que el manifiesto del JAR tenga la clase correcta -->
                     <mainClass>com.example.eureka.EurekaApplication</mainClass>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <!-- ELIMINAR <executions> para evitar la doble ejecución del repackage -->
             </plugin>
         </plugins>
     </build>
