@@ -57,7 +57,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <!-- Configuramos la clase principal y la ejecución para Docker -->
+                    <!-- ¡ESTO ARREGLA EL CLassNotFoundException EN RENDER! -->
                     <mainClass>com.example.eureka.EurekaApplication</mainClass>
                 </configuration>
                 <executions>
